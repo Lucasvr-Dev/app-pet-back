@@ -10,7 +10,7 @@ app.use(express.json());
 const taskRoutes = require('./routes/taskRoutes');
 app.use('/api/tasks', taskRoutes);
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT);
